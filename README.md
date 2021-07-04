@@ -12,6 +12,6 @@ Demo live [click](http://brsfc.herokuapp.com/home/).
 7. Create Super User `python manage.py createsuperuser`
 8. Finally Run The Project `python manage.py runserver`
 ## Homepage ( without login)
-<img src="home.png" >
+<img src="home.gif" >
 ## Homepage ( with login)
-<img src="home1.png" >
+<img src="home1.gif" >
