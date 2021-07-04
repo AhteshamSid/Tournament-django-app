@@ -13,5 +13,6 @@ Demo live [click](http://brsfc.herokuapp.com/home/).
 8. Finally Run The Project `python manage.py runserver`
 ## Homepage ( without login)
 <img src="home.gif" >
+
 ## Homepage ( with login)
 <img src="home1.gif" >
