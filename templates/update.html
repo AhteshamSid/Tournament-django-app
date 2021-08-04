@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+        <div class="row justify-content-center">
+            <div class="col-md-4"><a href="{% url 'home' %}" class="btn btn-dark my-3">Go Back</a>
+                <div class="card">
+                    <form method='POST' action="{% url 'update_photo' photo.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group m-3">
+                            <label>Description</label>
+                            <input required name="description" value="{{photo.description}}" type="text" placeholder="Enter a description" class="form-control">
+                        </div>
+                        <div class="form-group m-3">
+                            <label>Select a category</label>
+                            <select name="category"  class="form-control">
+                                <option value='None'>Other</option>
+                                {% for category1 in categories %}
+                                {% if photo.category == category1 %}
+                                <option value='{{category1.name}}' selected>{{photo.category}}</option>
+                                {% else %}
+                                <option value='{{category1.name}}' >{{category1.name}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group m-3">
+                            <label>Create a new category</label>
+                            <input name="category_new" type="text" placeholder="Create a new category(optional)" class="form-control">
+                        </div>
+                        <div class="form-group m-3">
+                        <div class="card my-2">{% if photo.image%}<img src="{{photo.image.url}}" class="image-thumbail">{% endif %}<img id="preview" class="image-thumbail" /></div>
+                            <label>Upload image</label><input name="images" value="{{photo.image}}" id="id_profile_pic2" type="file" multiple class="form-control-file" accept="image/*" onchange="previewImage(event)">
+                        </div>
+                        <button type='submit' class="btn btn-primary">Submit</button>
+                        <a href="{% url 'update_photo' photo.id%}" class="btn btn-primary m-3">Cancle</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<script>
+   const previewImage = e => {
+      const preview = document.getElementById('preview');
+      preview.src = URL.createObjectURL(e.target.files[0]);
+      preview.onload = () => URL.revokeObjectURL(preview.src);
+   };
+</script>
+        {% endblock %}
+

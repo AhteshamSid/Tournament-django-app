@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid text-center">
+   <div class="bs-docs-section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-8">
+            <div class="page-header">
+               <h1 id="containers">{{heading}}</h1>
+            </div>
+            <div class="bs-component">
+               <div class="card text-center">
+                  <div class="card-header">
+                     Register Form
+                  </div>
+                  <div class="card-body">
+                     {% if registration_complete == False %}
+                     {% if messages %}
+                     <div class="bs-component">
+                        <div class="alert alert-dismissible alert-warning">
+                           <button type="button" class="close" data-dismiss="alert">×</button>
+                           <h4 class="alert-heading">Error!</h4>
+                           {% for message in messages %}
+                           <p class="mb-0">{{ message }}</p>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     {% endif %}
+                     <form method="POST" action="{% url 'add-team' %}" enctype="multipart/form-data" autocomplete="off">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Team</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name='team_name' placeholder="Team name" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Logo</label>
+                           <div class="col-sm-10">
+                              <input type="file" class="form-control-file" id="exampleInputFile" name='team_logo' aria-describedby="fileHelp" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Manager Name</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="manager" placeholder="Manager Name" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Manager Phone</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="manager_phone" placeholder="Manager Phone" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Coach</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="coach" placeholder="Coach" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 1</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_1" placeholder="Player 1" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 2</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_2" placeholder="Player 2" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 3</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_3" placeholder="Player 3" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 4</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_4" placeholder="Player 4" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 5</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_5" placeholder="Player 5" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 6</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_6" placeholder="Player 6" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 7</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_7" placeholder="Player 7" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 8</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_8" placeholder="Player 8" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 9</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_9" placeholder="Player 9" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 10</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_10" placeholder="Player 10" required> 
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputtext3" class="col-sm-2 col-form-label">Player 11</label>
+                           <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="player_11" placeholder="Player 11" required>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-sm-10">
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                           </div>
+                        </div>
+                     </form>
+                     {% else %}
+                     <h3 class="card-title">Registration has been closed</h3>
+                     <a href="{% url 'home' %}" class="btn btn-primary">Go to Home</a>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

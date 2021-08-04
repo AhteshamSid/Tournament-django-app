@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+   <div class="bs-docs-section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-12">
+            <div class="page-header">
+               <h1 class="text-center">TEAM DETAILS</h1>
+            </div>
+            {% for team in teams %}
+            <div class="bs-component">
+               <div class="jumbotron">
+                  <img src="{{ team.image.url }}"  width="80" height="80">
+                  <h1 class="display-3">{{ team.team_name }}</h1>
+                  <hr class="my-4">
+                  <div class="row">
+                     <div class="col-3">
+                        <ul class="nav nav-tabs flex-column" role="tablist" aria-orientation="vertical">
+                           <li class="nav-item">
+                              <a class="nav-link active" data-toggle="tab" href="#status">Status</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#manager">Manager</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#coach">Coach</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#team_members">Team Members</a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="col-9">
+                        <div id="myTabContent" class="tab-content">
+                           <div class="tab-pane fade show active" id="status" role='tabpanel'>
+                              <div class="row">
+                                 <div class="card text-white bg-primary mb-3" style="width: 15rem;margin: 10px;">
+                                    <div class="card-header">Matches</div>
+                                    <div class="card-body">
+                                       <h4 class="card-title">{{ team.no_of_matches}}</h4>
+                                    </div>
+                                 </div>
+                                 <div class="card text-white bg-primary mb-3" style="width: 15rem;margin: 10px;">
+                                    <div class="card-header">Goals Scored</div>
+                                    <div class="card-body">
+                                       <h4 class="card-title">{{ team.goal_scored }}</h4>
+                                    </div>
+                                 </div>
+                                 <div class="card text-white bg-primary mb-3" style="width: 15rem;margin: 10px;">
+                                    <div class="card-header">Matches Win</div>
+                                    <div class="card-body">
+                                       <h4 class="card-title">{{team.no_of_matches_win}}</h4>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="manager">
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <h2 id="type-blockquotes">Manager</h2>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-4">
+                                    <div class="bs-component">
+                                       <blockquote class="blockquote">
+                                          <p class="mb-0">{{team.managers.name}}</p>
+                                          <p class="mb-0">{{team.managers.phone}}</p>
+                                       </blockquote>
+                                       <button class="source-button btn btn-primary btn-xs" role="button" tabindex="0">&lt; &gt;</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="coach">
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <h2 id="type-blockquotes">Coach</h2>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-4">
+                                    <div class="bs-component">
+                                       <blockquote class="blockquote">
+                                          <p class="mb-0">{{team.coach}}</p>
+                                       </blockquote>
+                                       <button class="source-button btn btn-primary btn-xs" role="button" tabindex="0">&lt; &gt;</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="team_members">
+                              <div class="row">
+                                 <div class="col-lg-4">
+                                    <div class="bs-component">
+                                       <div class="card mb-3">
+                                          <h3 class="card-header">Team Members</h3>
+                                          <ul class="list-group list-group-flush">
+                                             {% for member in team.members %}
+                                             <li class="list-group-item">{{member.name}}</li>
+                                             {% empty %}
+                                             <li class="list-group-item">No members yet</li>
+                                             {% endfor %}
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

@@ -1,0 +1,341 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+  <style>
+.filter-button:hover,
+.filter-button:focus,
+.filter-button.active{
+    color: #ffffff;
+    background-color:#3F6184;
+	outline:none;
+}
+
+
+.country_section .box {
+  display: block;
+  position: relative;
+  margin-top: 45px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.country_section .box img {
+  width: 100%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.country_section .box:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.country_section .detail-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.country_section .detail-box h3 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+.box img {
+  width: 100%;
+        height: 400px;
+        object-fit: cover;}
+   </style>
+<div id="demo" class="carousel slide" data-ride="carousel">
+   <!-- Indicators -->
+   <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#demo" data-slide-to="3"></li>
+      <li data-target="#demo" data-slide-to="4"></li>
+   </ul>
+   <!-- The slideshow -->
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+         <img src="{% static 'img/6_002.jpg' %}" alt="Los Angeles" width="1100" height="500">
+         <div class="carousel-caption text-center">
+            <div class="container">
+               <div class="">
+                  <h1>
+                     <span class="heading1" style="
+                        display: inline-block;
+                        padding: 10px 15px 8px;
+                        margin-bottom: 20px;">Football Tournaments</span><br>
+                     <span class="heading2" style="
+                        padding: 10px;margin-top: 10px;">2021</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="{% static 'img/7_002.jpg' %}" alt="Chicago" width="1100" height="500">
+         <div class="carousel-caption text-center">
+            <div class="container">
+               <div class="dsc">
+                  <h1>
+                     <span class="heading1" style="
+                        display: inline-block;
+                        padding: 10px 15px 8px;
+                        margin-bottom: 20px;">Football Tournaments</span><br>
+                     <span class="heading2" style="
+                        padding: 10px;margin-top: 10px;">2021</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="{% static 'img/1_003.jpg' %}" alt="Chicago" width="1100" height="500">
+         <div class="carousel-caption text-center">
+            <div class="container">
+               <div class="dsc">
+                  <h1>
+                     <span class="heading1" style="
+                        display: inline-block;
+                        padding: 10px 15px 8px;
+                        margin-bottom: 20px;">Football Tournaments</span><br>
+                     <span class="heading2" style="
+                        padding: 10px;margin-top: 10px;">2021</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="{% static 'img/7.jpg' %}" alt="Chicago" width="1100" height="500">
+         <div class="carousel-caption text-center">
+            <div class="container">
+               <div class="dsc">
+                  <h1>
+                     <span class="heading1" style="
+                        display: inline-block;
+                        padding: 10px 15px 8px;
+                        margin-bottom: 20px;">Football Tournaments</span><br>
+                     <span class="heading2" style="
+                        padding: 10px;margin-top: 10px;">2021</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="carousel-item">
+         <img src="{% static 'img/2.jpg' %}" alt="Chicago" width="1100" height="500">
+         <div class="carousel-caption text-center">
+            <div class="container">
+               <div class="dsc">
+                  <h1>
+                     <span class="heading1" style="
+                        display: inline-block;
+                        padding: 10px 15px 8px;
+                        margin-bottom: 20px;">Football Tournaments</span><br>
+                     <span class="heading2" style="
+                        padding: 10px;margin-top: 10px;">2021</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Left and right controls -->
+   <a class="carousel-control-prev" href="#demo" data-slide="prev">
+   <span class="carousel-control-prev-icon"></span>
+   </a>
+   <a class="carousel-control-next" href="#demo" data-slide="next">
+   <span class="carousel-control-next-icon"></span>
+   </a>
+</div>
+<div class="container-fluid">
+   <div class="bs-docs-section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-12">
+            <div class="page-header text-center">
+               <h1 id="containers">MATCHES</h1>
+            </div>
+            <div class="bs-component">
+               <div class="card">
+                  <div class="card-body" style="display: flex;">
+                     <table class="table table-hover table-striped table-bordered datatable dataTable no-footer">
+                        <thead>
+                           <tr class="table-primary">
+                              <th scope="col">No</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Team One</th>
+                              <th scope="col">Team Two</th>
+                              <th scope="col">Winner</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for match in matches %}
+                           <tr>
+                              <td>{{ forloop.counter }}</td>
+                              <th scope="row">{{ match.date }}</th>
+                              <td>{{ match.team_1 }}</td>
+                              <td>{{ match.team_2 }}</td>
+                              <td>{{ match.winner | default:"" }}</td>
+                           </tr>
+                           {% empty %}
+                           <tr>
+                              <td>No matches yet.</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   {% if points %}
+   <div class="bs-docs-section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-12">
+            <div class="page-header text-center">
+               <h1 id="containers">Points Table</h1>
+            </div>
+            <div class="bs-component">
+               <div class="card">
+                  <div class="card-body" style="display: flex;">
+                     <table class="table table-hover table-striped table-bordered datatable dataTable no-footer">
+                        <thead>
+                           <tr class="table-primary">
+                              <th scope="col">No.</th>
+                              <th scope="col">Team</th>
+                              <th scope="col">Win</th>
+                              <th scope="col">Lost</th>
+                              <th scope="col">Ties</th>
+                              <th scope="col">Points</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for match in points %}
+                           <tr>
+                              <td>{{ forloop.counter }}</td>
+                              <th scope="row">{{ match.name }}
+                                 {% if request.user.is_staff %}
+                                 <form class="d-inline" action="{% url 'delete_point' match.id %}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <button type="submit" class="border-0 bg-white"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                 </form>
+                                 {% endif %}
+                              </th>
+                              <td>{{ match.wins }}</td>
+                              <td>{{ match.losses }}</td>
+                              <td>{{ match.ties }}</td>
+                              <td>{{ match.points }}</td>
+                           </tr>
+                           {% empty %}
+                           <tr>
+                              <td>No matches yet.</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   {% endif %}
+   <div class="bs-docs-section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-12">
+            <div class="page-header text-center">
+               <h1 id="containers">{{heading}}</h1>
+            </div>
+            <div class="bs-component">
+               <div class="card text-center">
+                  <div class="card-body" style="display: flex;">
+                     <div class="container">
+                        <div class="row">
+                           {% for team in teams %}
+                           <div class="col-sm-4">
+                              <img src="{{team.image.url}}" class="img-responsive"  alt="Image">
+                              <p style="margin-top: 5px;"><a href="{% url 'team-details' pk=team.id %}">{{team.name}}</a></p>
+                           </div>
+                           {% empty %}
+                           <p class="card-text">No teams yet</p>
+                           {% endfor %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="bs-docs-section country_section">
+      <div class="row" style="display: flex;justify-content: center;">
+         <div class="col-lg-12">
+            <div class="page-header text-center">
+               <h1 id="containers">Photos Gallery{% if request.user.is_staff %}<a href="{% url 'add' %}">+</a>{% endif %}</h1>
+            </div>
+            <div class="bs-component">
+               <div class="card text-center">
+                  <div class="card-body" style="display: flex;">
+                     <div class="container">
+                        <div class="heading_container heading_center">
+                           <div align="center">
+                             <button class="filter-button" data-filter="all">All</button>
+                             {% for category in categories %}
+                             <button class="filter-button" data-filter="{{category|slugify}}">{{category}}</button>
+                             {% if request.user.is_staff %}
+                              <form class="d-inline" action="{% url 'delete_category' category.id %}" method="post" enctype="multipart/form-data">
+                               {% csrf_token %}
+                               <button type="submit" class="border-0 bg-white"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                              </form>{% endif %}
+                              {% endfor %}
+                             <button class="filter-button" data-filter="Awesome">Awesome</button>
+                           </div>
+                        </div>
+                        <div class="row">
+                           {% for photos in photos %}
+                           <div class="col-md-4 filter {% if photos.category %}{{photos.category|slugify}}{% else %}Awesome{% endif %}">
+                             <a href="{{photos.image.url}}" class="box fancybox" data-fancybox="gallery1">
+                               <img src="{{photos.image.url}}" alt="">
+                               <div class="detail-box">
+                                 <h3>
+                                   {% if photos.description%}{{photos.description}}{% endif %}
+                                 </h3>
+                               </div>
+                             </a>
+                              {% if request.user.is_staff %}<form class="" action="{% url 'delete_photo' photos.id %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <button type="submit" class="border-0 bg-white"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <a href="{% url 'update_photo' photos.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        </form>{% endif %}
+                           </div>
+                           {% empty %}
+                           <p class="card-text">No Photos yet</p>
+                           {% endfor %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
