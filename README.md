@@ -118,7 +118,7 @@ def activate(request, uidb64, token):
 
 ```python
 
-DEFAULT_FROM_EMAIL = 'mohammadahteshamsiddiqui@gmail.com'
+DEFAULT_FROM_EMAIL = 'workorbit@gmail.com'
 DEFAULT_FROM_EMAIL = 'workorbit@gmail.com'
 SERVER_EMAIL = 'workorbit@gmail.com'
 EMAIL_USE_TLS = True
