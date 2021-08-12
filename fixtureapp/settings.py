@@ -92,9 +92,9 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'brs',  # The Server name from 1.5
+#         'NAME': 'brsfc',  # The Server name from 1.5
 #         'USER': 'postgres',  # The username from 1.6
-#         'PASSWORD': '123@Lala',  # The password from installation
+#         'PASSWORD': 'svbHSWH',  # The password from installation
 #         'HOST': 'localhost',  # Host name/address from 1.6,
 #         'PORT': '5432',
 #     }
@@ -151,5 +151,17 @@ MEDIA_ROOT = BASE_DIR / 'brs/static/img'
 
 db1 = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db1)
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'workorbit@gmail.com'
+SERVER_EMAIL = 'workorbit@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'workorbit@gmail.com'
+EMAIL_HOST_PASSWORD = 'P@ssw0rd5'
+
 
 django_heroku.settings(locals(), staticfiles=False, logging=False)
