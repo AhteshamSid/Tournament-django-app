@@ -18,7 +18,7 @@ Demo live [click](http://brsfc.herokuapp.com/home/).
 <img src="home1.gif" >
 
 
-## Email Varification
+## Email Verification
 **apps/urls.py**
 
 ```python
