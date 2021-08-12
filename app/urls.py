@@ -17,4 +17,7 @@ urlpatterns = [
     path('delete-category/<str:pk>/', DeleteCategory, name='delete_category'),
     path('delete-point/<str:pk>/', DeletePoint, name='delete_point'),
 
+    path('signup/', signup, name="signup"),
+    path('activate/<uidb64>/<token>/', activate, name='activate'),
+
 ]
